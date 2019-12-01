@@ -1,3 +1,28 @@
+# CIS 131-102 Final Project
+
+Final Project – Angular Movie / Tv  Database
+
+Using the Angular Framework we have been working with the past few weeks,  AND the Movie Database we have been using for our api - create a web application that:
+
+    The Home page should be a component which displays two cards – one with a current movie and one with a current tv show.
+    Clicking on the movie will link the user to a component which will display a minimum of 6 movies from the now_playing api
+        Display each movie’s title, picture, release date, and description
+    Clicking on the tv card will link the user to a component which will display a minimum of 6 tv shows from the TV/Get Popular api
+        Display each tv show’s name, first air date, picture and description
+    Navigation should appear across all pages but should only be in a single template (not hardcoded in several different components)
+        Includes a link to Home | Movies | TvShows
+
+Your application must demonstrate the use of:
+
+    TypeScript
+    Components
+    Routing
+    HttpClientModule to get your api request
+    Interfaces for the movie and the tv shows (at least one)
+    Push your solution to gitHub. Be sure to incorporate .gitignore so your node_modules and unnecessary files are NOT also pushed.
+        Make sure your repo is public so I can see it
+
+
 # ClickFlix
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
