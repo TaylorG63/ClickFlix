@@ -1,0 +1,11 @@
+<section>
+    <div *ngIf="movies.results !== undefined">
+        <div *ngFor = "let movie of movies.results">
+            <h1>{{movie.title}}</h1>
+            <p>{{movie.overview}}</p>
+            <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{movie.poster_path}}" [alt]="movie.title"
+            [style.width.px] = 300
+            >
+        </div>
+    </div>
+</section>
