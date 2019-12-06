@@ -10,14 +10,16 @@ import { MovieService } from './movies.service';
 
 export class MoviesComponent{
     movies:IMovie;
+    moviesLoaded: Promise<boolean>
     constructor(private movieService: MovieService)
     {
         this.callMovie()
+        
     }
     callMovie(){
         this.movieService.getMovies().subscribe(Observed => {            
             this.movies = Observed
-            this.movies = this.movies
+            this.moviesLoaded = Promise.resolve(true)
         })
     }
     nextPage(){

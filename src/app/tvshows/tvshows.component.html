@@ -1,0 +1,14 @@
+<section id="MainDisplay" *ngIf="showsLoaded | async">
+        <div *ngFor = "let show of shows.results" class="tvCard">
+            <h1 class="title">{{show.original_name}}</h1>
+            <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{show.poster_path}}" [alt]="show.title"
+            [style.width.px] = 300
+            >
+            <p class="releaseDate">First episode aired {{show.first_air_date}}.</p>
+            <p class="overview">{{show.overview}}</p>
+        </div>
+    <footer>
+        <button (click)="prevPage()" [disabled]="shows.page <= 1" >Prev</button>
+        <button (click) = "nextPage()" [disabled]="shows.page >= shows.total_pages">Next</button>
+    </footer>
+</section>

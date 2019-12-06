@@ -4,18 +4,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TvShows } from './tvshows/tvshows.component';
+import { TvShowComponent } from './tvshows/tvshows.component';
 import { MoviesComponent } from './movies/movies.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TvShows,
-    MoviesComponent
+    TvShowComponent,
+    MoviesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule,
+    RouterModule.forRoot([
+      {path: 'movies', component: MoviesComponent},
+      {path: 'tv', component:TvShowComponent},
+      {path: 'home', component:HomeComponent},
+      {path: '', redirectTo: 'home', pathMatch:'full'},
+      {path: '**', redirectTo: 'home', pathMatch:'full'}
+    ]),
     HttpClientModule
   ],
   providers: [],

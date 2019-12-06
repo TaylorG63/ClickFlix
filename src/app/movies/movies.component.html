@@ -1,11 +1,15 @@
-<section id="MainDisplay">
-    <div *ngFor = "let movie of movies.results" class="movieCard">
-        <h1 class="title">{{movie.title}}</h1>
-        <p class="overview">{{movie.overview}}</p>
-        <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}" [alt]="movie.title"
-        [style.width.px] = 300
-        >
-    </div>
-    <button (click)="prevPage()" [disabled]="movieservice.page <= 1" >Prev</button>
-    <button (click) = "nextPage()" [disabled]="currentPage < movies.page">Next</button>
+<section id="MainDisplay" *ngIf="moviesLoaded | async">
+        <div *ngFor = "let movie of movies.results" class="movieCard">
+            <h1 class="title">{{movie.title}}</h1>
+            <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}" [alt]="movie.title"
+            [style.width.px] = 300
+            >
+            <p class="releaseDate">Release date {{movie.release_date}}.</p>
+            <br>
+            <p class="overview">{{movie.overview}}</p>
+        </div>
+    <footer>
+        <button (click)="prevPage()" [disabled]="movies.page <= 1" >Prev</button>
+        <button (click) = "nextPage()" [disabled]="movies.page >= movies.total_pages">Next</button>
+    </footer>
 </section>

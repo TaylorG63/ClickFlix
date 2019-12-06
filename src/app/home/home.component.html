@@ -1,0 +1,16 @@
+<section id="MainDisplay">
+    <div class="Card" [routerLink]="['/movies']" *ngIf="moviesLoaded | async">
+        <h1>Movies Now Playing</h1>
+        <p>Click here to see more</p>
+        <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movies.results[0].poster_path}}" [alt]="movies.results[0].title"
+        [style.width.px] = 300
+        >
+    </div>
+    <div class="Card" [routerLink]="['/tv']" *ngIf="showsLoaded | async">
+        <h1>Popular Shows</h1>
+        <p>Click here to see more</p>
+        <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{shows.results[0].poster_path}}" [alt]="shows.results[0].title"
+        [style.width.px] = 300
+        >
+    </div>
+</section>

@@ -1,1 +1,10 @@
-<app-movie></app-movie>
+<section class="Main">
+    <nav>
+        <ul>
+            <li><a [routerLink]="['/home']">Home</a></li>
+            <li><a [routerLink]="['/movies']">Movies</a></li>
+            <li><a [routerLink]="['/tv']">Tv Shows</a></li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</section>

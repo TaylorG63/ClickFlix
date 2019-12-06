@@ -1,0 +1,30 @@
+.Main{
+    background-color:rgba(255, 255, 255, 0.473);
+    margin-left:150px;
+    margin-right:150px;
+    padding-bottom:11%;
+}
+nav{
+    display:table;
+}
+ul{
+    list-style-type: none;
+    padding:10px;
+    overflow: auto;
+    display:table;
+}
+a:hover{
+    background-color:white;
+}
+li {
+    display:inline;
+    padding:10px;
+}
+a:link{
+    text-decoration: none;
+    color:black;
+}
+
+a:visited{
+    color:black;
+}
