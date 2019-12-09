@@ -1,10 +1,11 @@
 <section id="MainDisplay" *ngIf="moviesLoaded | async">
         <div *ngFor = "let movie of movies.results" class="movieCard">
-            <h1 class="title">{{movie.title}}</h1>
+            <div class="PicDiv">
+            <h2 class="title">{{movie.title}}</h2>
             <img class="image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}" [alt]="movie.title"
             [style.width.px] = 300
-            >
-            <p class="releaseDate">Release date {{movie.release_date}}.</p>
+            ></div>
+            <h1 class="releaseDate">Release date {{movie.release_date}}.</h1>
             <br>
             <p class="overview">{{movie.overview}}</p>
         </div>
